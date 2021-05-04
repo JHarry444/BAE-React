@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Trainer = (props) => {
     console.log("PROPS: ", props);
@@ -19,8 +19,8 @@ Trainer.defaultProps = {
     jobTitle: "DevOps wizard"
 }
 
-Trainer.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
-    jobTitle: PropTypes.string.isRequired
-}
+// Trainer.propTypes = {
+//     name: PropTypes.string.isRequired,
+//     age: PropTypes.number.isRequired,
+//     jobTitle: PropTypes.string.isRequired
+// }
