@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const TrainerForm = () => {
@@ -6,6 +6,18 @@ const TrainerForm = () => {
     const [name, setName] = useState("barry");
     const [age, setAge] = useState(12);
     const [jobTitle, setJobTitle] = useState("trainer");
+
+    useEffect(() => {
+        console.log("Current state: ", {
+            name,
+            age,
+            jobTitle
+        });
+
+        const tearDown = () => console.log("bye bye!");
+
+        return tearDown;
+    });
 
     return (
         <form>
