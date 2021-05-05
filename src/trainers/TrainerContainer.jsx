@@ -1,6 +1,7 @@
 import trainersJSON from './trainers.json';
 import Trainer from './Trainer';
 import { useState } from 'react';
+import Search from './Search';
 
 const TrainerContainer = () => {
 
@@ -21,11 +22,14 @@ const TrainerContainer = () => {
               );
       });
     
+    const handleChange = e => setSearch(e.target.value);
+
     return (
       <>
-        <label>Search: </label> 
-        <input placeholder="enter search here" value={search} onInput={e => setSearch(e.target.value)}/>
-        {trainers}
+        <Search search={search} handleChange={handleChange}/>
+        <section>
+          {trainers}
+        </section>
       </>
     );
 }
