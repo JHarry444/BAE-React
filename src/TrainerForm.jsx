@@ -9,10 +9,11 @@ const TrainerForm = () => {
 
     return (
         <form>
-            <input placeholder="name" value={name} onChange={(event) => setName(event.target.value)}/>
-            <input placeholder="age" value={age} onChange={(e) => setAge(e.target.value)} />
-            <input placeholder="job title" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)}/>
+            <input placeholder="name" value={name} onInput={(event) => setName(event.target.value)}/>
+            <input placeholder="age" value={age} onInput={(e) => setAge(e.target.value)} />
+            <input placeholder="job title" value={jobTitle} onInput={(e) => setJobTitle(e.target.value)}/>
             <button type="button">Submit</button>
+            <p>TF: {new Date().toLocaleTimeString()}</p>
         </form>
     )
 }

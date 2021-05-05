@@ -1,12 +1,12 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const Trainer = (props) => {
-    console.log("PROPS: ", props);
+const Trainer = ({ name, age, jobTitle }) => {
+
     return (
         <div>
-            <h3>{props.name}</h3>
-            <p>Age: {props.age}</p>
-            <p>JobTitle: {props.jobTitle}</p>
+            <h3>{name}</h3>
+            <p>Age: {age}</p>
+            <p>JobTitle: {jobTitle}</p>
         </div>
     );
 }
@@ -19,8 +19,8 @@ Trainer.defaultProps = {
     jobTitle: "DevOps wizard"
 }
 
-// Trainer.propTypes = {
-//     name: PropTypes.string.isRequired,
-//     age: PropTypes.number.isRequired,
-//     jobTitle: PropTypes.string.isRequired
-// }
+Trainer.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired,
+    jobTitle: PropTypes.string.isRequired
+}
