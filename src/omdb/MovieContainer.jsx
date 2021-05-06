@@ -1,20 +1,12 @@
 import Movie from "./Movie";
 
-const MovieContainer = (props) => {
-    // array of JS objects
-    const movies = props.movies;
-
+const MovieContainer = ({movies}) => {
     // array of JSX components
-    const moviesAsJSX = [];
-
-    movies.forEach(movie => {
-        const movieComponent = <Movie title={movie.Title} poster={movie.Poster} year={movie.Year}/>;
-        moviesAsJSX.push(movieComponent);
-    });
+    const moviesAsJSX = movies.map(movie =>  <Movie title={movie.Title} poster={movie.Poster} year={movie.Year}/>);
 
     return (
         <>
-        <br/>
+            <br/>
             {moviesAsJSX}
         </>
     );

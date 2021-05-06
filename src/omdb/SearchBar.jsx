@@ -1,8 +1,4 @@
-const SearchBar = (props) => {
-    const search = props.search;
-    const setSearch = props.setSearch;
-    const searchFilms = props.searchFilms;
-
+const SearchBar = ( {search, setSearch, searchFilms} ) => {
     return (
         <>
             <label>Movie name:</label>
