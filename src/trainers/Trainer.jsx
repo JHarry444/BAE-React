@@ -3,14 +3,14 @@ import { useEffect } from 'react';
 
 const Trainer = ({ name, age, jobTitle }) => {
 
-    // componentDidMount/Update -> component has been rendered.
-    useEffect(() => {
-        console.log(`Trainer ${name} rendered to page`);
+    // // componentDidMount/Update -> component has been rendered.
+    // useEffect(() => {
+    //     console.log(`Trainer ${name} rendered to page`);
 
-        const tearDown = () => console.log(`Trainer ${name} removed page`);
-        // componentWillUnmount -> component is about to be removed
-        return tearDown;
-    });
+    //     const tearDown = () => console.log(`Trainer ${name} removed page`);
+    //     // componentWillUnmount -> component is about to be removed
+    //     return tearDown;
+    // });
 
     return (
         <div>

@@ -1,9 +1,3 @@
-const Item = (props) => {
-    return(
-        <li>
-            {props.item}
-        </li>
-    )
-}
+const Item = ({item}) => <li> {item} </li>;
 
 export default Item;

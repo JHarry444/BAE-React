@@ -1,15 +1,13 @@
-import { useState } from 'react';
-import './App.css'; 
-import Container from './lifting-state/Container';
-import Shopping from './shopping/Shopping';
+import './App.css';
 import TrainerContainer from './trainers/TrainerContainer';
+import TrainerForm from './trainers/TrainerForm';
 
 function App() {
 
   return (
     <div className="App">
+      <TrainerForm/>
       <TrainerContainer/>
-      {/* <Container/> */}
     </div>
   );
 }
