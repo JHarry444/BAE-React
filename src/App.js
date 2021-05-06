@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
 import MovieContainer from './omdb/MovieContainer';
+import SearchBar from './omdb/SearchBar';
 
 function App() {
-
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -16,11 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <>
-        <label>Movie name:</label>
-        <input value={search} onInput={event => setSearch(event.target.value)}/>
-        <button onClick={searchFilms}>Search</button>
-      </>
+      <SearchBar search={search} setSearch={setSearch} searchFilms={searchFilms}/>
       <MovieContainer movies={movies}/>
     </div>
   );
