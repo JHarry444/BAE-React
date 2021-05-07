@@ -1,8 +1,20 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 const IndividualTrainer = () => {
     const [trainer, setTrainer] = useState({});
 
+    // will pull the id from the path
+    const params = useParams();
+    const id = params.id;
+
+    // componenentDidMount -> runs after the component renders (only once)
+    useEffect(() => {
+        axios.get("http://localhost:8080/trainer/get/" + id)
+            .then(res => setTrainer(res.data))
+            .catch(err => console.log(err));
+    }, [id]);
 
     return (
         <>

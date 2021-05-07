@@ -1,24 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 
 const TrainerForm = () => {
 
+    const history = useHistory();
+
     const [name, setName] = useState("barry");
     const [age, setAge] = useState(12);
     const [jobTitle, setJobTitle] = useState("trainer");
-
-    // useEffect(() => {
-    //     console.log("Current state: ", {
-    //         name,
-    //         age,
-    //         jobTitle
-    //     });
-
-    //     const tearDown = () => console.log("bye bye!");
-
-    //     return tearDown;
-    // });
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -27,8 +18,11 @@ const TrainerForm = () => {
             name,
             age,
             jobTitle
-        }).then(res => console.log(res))
-            .catch(err => console.log(err));
+        }).then(res => {
+            const id = res.data.id;
+            // redirect to /trainers/read/id
+            history.push("/trainers/read/" + id);
+        }).catch(err => console.log(err));
     }
 
     return (
