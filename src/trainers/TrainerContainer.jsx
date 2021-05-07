@@ -3,6 +3,7 @@ import Trainer from './Trainer';
 import { useEffect, useState } from 'react';
 import Search from './Search';
 import axios from 'axios';
+import { CardColumns, CardDeck, CardGroup, Col, Container, Row } from 'react-bootstrap';
 
 const TrainerContainer = () => {
 
@@ -34,24 +35,23 @@ const TrainerContainer = () => {
 
     const renderedTrainers = filteredTrainers.map((trainer) => {
         return (
-                <Trainer 
-                  key={trainer.id}
-                  name={trainer.name} 
-                  age={trainer.age} 
-                  jobTitle = {trainer.jobTitle}
-                />
-              );
+            <Col className="">
+                <Trainer key={trainer.id} name={trainer.name} age={trainer.age} jobTitle = {trainer.jobTitle}/>
+            </Col>
+          );
       });
     
     const handleChange = e => setSearch(e.target.value);
 
     return (
-      <>
-        <Search search={search} handleChange={handleChange}/>
-        <section>
-          {renderedTrainers}
-        </section>
-      </>
+      <Container>
+        <Row className="w-25 m-auto mb-1">
+         <Search search={search} handleChange={handleChange}/>
+        </Row>
+        <CardGroup className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+            {renderedTrainers}
+        </CardGroup>
+      </Container>
     );
 }
 

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 
 const Trainer = ({ name, age, jobTitle }) => {
 
@@ -13,11 +14,16 @@ const Trainer = ({ name, age, jobTitle }) => {
     // });
 
     return (
-        <div>
-            <h3>{name}</h3>
-            <p>Age: {age}</p>
-            <p>JobTitle: {jobTitle}</p>
-        </div>
+        <Card>
+            <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                <Card.Text>
+                    Age: {age}
+                    <br/>
+                    JobTitle: {jobTitle}
+                </Card.Text>
+            </Card.Body>
+        </Card>
     );
 }
 

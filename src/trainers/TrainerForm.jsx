@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
 
 
@@ -26,13 +27,14 @@ const TrainerForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input placeholder="name" value={name} onInput={(event) => setName(event.target.value)}/>
-            <input placeholder="age" value={age} onInput={(e) => setAge(e.target.value)} />
-            <input placeholder="job title" value={jobTitle} onInput={(e) => setJobTitle(e.target.value)}/>
-            <button type="submit">Submit</button>
+        <Form onSubmit={handleSubmit} className="w-25 m-auto">
+            <Form.Control placeholder="name" value={name} onInput={(event) => setName(event.target.value)}/>
+            <Form.Control placeholder="age" value={age} onInput={(e) => setAge(e.target.value)} />
+            <Form.Control placeholder="job title" value={jobTitle} onInput={(e) => setJobTitle(e.target.value)}/>
+            <br/>
+            <Button type="submit" variant="primary">Submit</Button>
             {/* <p>TF: {new Date().toLocaleTimeString()}</p> */}
-        </form>
+        </Form>
     )
 }
 
