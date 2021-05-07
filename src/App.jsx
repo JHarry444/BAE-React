@@ -1,24 +1,24 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
-import TrainerContainer from './trainers/TrainerContainer'
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
+import TrainerContainer from './trainers/TrainerContainer';
 import TrainerForm from './trainers/TrainerForm';
 import IndividualTrainer from './trainers/IndividualTrainer';
-import { Nav } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Nav fill variant="tabs">
-          {/* routing Links with Bottstrap styling */}
+          {/* routing Links with Bootstrap styling */}
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/away" className="nav-link">Away</Link>
           <Link to="/trainers/create" className="nav-link">CREATE Trainers</Link>
           <Link to="/trainers/read" className="nav-link">GET Trainers</Link>
         </Nav>
 
-        <br/>
+        <br />
         <Route exact path="/">
           <p>Home</p>
         </Route>
@@ -26,17 +26,16 @@ function App() {
           <p>Away</p>
         </Route>
         <Route path="/trainers/create">
-          <TrainerForm/>
+          <TrainerForm />
         </Route>
         <Route exact path="/trainers/read">
-          <TrainerContainer/>
+          <TrainerContainer />
         </Route>
         <Route path="/trainers/read/:id">
-          <IndividualTrainer/>
+          <IndividualTrainer />
         </Route>
-        {new Date().toLocaleTimeString()}
       </Router>
-      </div>
+    </div>
   );
 }
 

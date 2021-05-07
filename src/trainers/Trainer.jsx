@@ -1,42 +1,27 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 
-const Trainer = ({ name, age, jobTitle }) => {
-
-    // // componentDidMount/Update -> component has been rendered.
-    // useEffect(() => {
-    //     console.log(`Trainer ${name} rendered to page`);
-
-    //     const tearDown = () => console.log(`Trainer ${name} removed page`);
-    //     // componentWillUnmount -> component is about to be removed
-    //     return tearDown;
-    // });
-
-    return (
-        <Card>
-            <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                    Age: {age}
-                    <br/>
-                    JobTitle: {jobTitle}
-                </Card.Text>
-            </Card.Body>
-        </Card>
-    );
-}
+const Trainer = ({ name, age, jobTitle }) => (
+  <Card>
+    <Card.Body>
+      <Card.Title>{name}</Card.Title>
+      <Card.Text>
+        Age:
+        {' '}
+        {age}
+        <br />
+        JobTitle:
+        {' '}
+        {jobTitle}
+      </Card.Text>
+    </Card.Body>
+  </Card>
+);
 
 export default Trainer;
 
-Trainer.defaultProps = {
-    name: "Harry",
-    age: 22,
-    jobTitle: "DevOps wizard"
-}
-
 Trainer.propTypes = {
-    name: PropTypes.string.isRequired,
-    age: PropTypes.number.isRequired,
-    jobTitle: PropTypes.string.isRequired
-}
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+  jobTitle: PropTypes.string.isRequired,
+};
